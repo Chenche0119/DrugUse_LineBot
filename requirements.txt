@@ -1,0 +1,13 @@
+flask
+line-bot-sdk
+transformers
+torch
+# torchvision # 如果您確定沒有用到 torchvision，可以考慮移除或註解掉
+# torchaudio # 同上
+diffusers
+accelerate
+Pillow
+python-dotenv
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
