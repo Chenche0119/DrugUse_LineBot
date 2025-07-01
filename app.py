@@ -55,6 +55,15 @@ if not CHANNEL_SECRET or not CHANNEL_ACCESS_TOKEN or not GOOGLE_API_KEY:
     logging.error(error_message)
     raise RuntimeError(error_message)
 
+# Construct and log the full webhook URL for LINE
+if 'HF_SPACE_URL' in os.environ:
+    full_webhook_url = f"{base_url.rstrip('/')}/callback"
+    logging.info("="*60)
+    logging.info("  Application started successfully on Hugging Face!")
+    logging.info(f"  Please set this Webhook URL in your LINE Developers Console:")
+    logging.info(f"  {full_webhook_url}")
+    logging.info("="*60)
+
 app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
