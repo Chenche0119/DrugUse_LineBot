@@ -32,14 +32,14 @@ import pytz
 CHANNEL_SECRET = os.environ.get("LINE_CHANNEL_SECRET")
 CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
 GOOGLE_MAP_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
-GOOGLE_API_KEY = os.environ.get("GEMINI_API_KEY")
+GOOGLE_API_KEY = os.environ.get("GOOGLE_GEMINI_API_KEY")
 base_url = os.environ.get("HF_SPACE_URL", "localhost")
 
 # Log the status of essential environment variables
 logging.info(f"Checking environment variables...")
 logging.info(f"LINE_CHANNEL_SECRET is loaded: {bool(CHANNEL_SECRET)}")
 logging.info(f"LINE_CHANNEL_ACCESS_TOKEN is loaded: {bool(CHANNEL_ACCESS_TOKEN)}")
-logging.info(f"GEMINI_API_KEY is loaded: {bool(GOOGLE_API_KEY)}")
+logging.info(f"GOOGLE_GEMINI_API_KEY is loaded: {bool(GOOGLE_API_KEY)}")
 logging.info(f"GOOGLE_MAPS_API_KEY is loaded: {bool(GOOGLE_MAP_API_KEY)}")
 
 if not CHANNEL_SECRET or not CHANNEL_ACCESS_TOKEN or not GOOGLE_API_KEY:
@@ -49,7 +49,7 @@ if not CHANNEL_SECRET or not CHANNEL_ACCESS_TOKEN or not GOOGLE_API_KEY:
     if not CHANNEL_ACCESS_TOKEN:
         missing.append("LINE_CHANNEL_ACCESS_TOKEN")
     if not GOOGLE_API_KEY:
-        missing.append("GEMINI_API_KEY")
+        missing.append("GOOGLE_GEMINI_API_KEY")
     
     error_message = f"Missing essential environment variables: {', '.join(missing)}",
     logging.error(error_message)
