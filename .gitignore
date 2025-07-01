@@ -6,7 +6,7 @@ venv/
 
 # Secret files
 Token.txt
-"Linebot Drug Use.json"
+Linebot Drug Use.json
 
 # IDE / Editor specific files
 .idea/
