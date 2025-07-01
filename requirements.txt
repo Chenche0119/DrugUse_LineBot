@@ -16,3 +16,4 @@ requests
 apscheduler
 pytz
 python-dotenv
+huggingface-hub
