@@ -33,30 +33,33 @@ secrets:
 ├── Dockerfile          # Docker 容器設定
 └── README.md           # 專案說明文件
 ```
+
 ---
 
 ## 安裝方式
 
-1. 建立虛擬環境並安裝依賴
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+1.  建立虛擬環境並安裝依賴
 
-2. 設定環境變數：
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
 
-| 變數名稱                  | 說明                                 |
-|---------------------------|--------------------------------------|
-| `YOUR_CHANNEL_SECRET`     | LINE Bot Webhook 驗證碼              |
-| `YOUR_CHANNEL_ACCESS_TOKEN` | LINE Bot Access Token             |
-| `GOOGLE_API_KEY`          | Google Gemini API 金鑰               |
-| `GOOGLE_MAP_API_KEY`      | Google Maps API 金鑰（查詢藥局）     |
+2.  設定環境變數：
 
-3. 啟動伺服器
-```bash
-python app.py
-```
+    | 變數名稱                  | 說明                                 |
+    | ------------------------- | ------------------------------------ |
+    | `YOUR_CHANNEL_SECRET`     | LINE Bot Webhook 驗證碼              |
+    | `YOUR_CHANNEL_ACCESS_TOKEN` | LINE Bot Access Token                |
+    | `GOOGLE_API_KEY`          | Google Gemini API 金鑰               |
+    | `GOOGLE_MAP_API_KEY`      | Google Maps API 金鑰（查詢藥局）     |
+
+3.  啟動伺服器
+
+    ```bash
+    python app.py
+    ```
 
 預設會開在 `https://kyle9574-linebot.hf.space/callback`。
 
@@ -65,7 +68,7 @@ python app.py
 ## 功能說明
 
 | 功能             | 說明                                                                 |
-|------------------|----------------------------------------------------------------------|
+| ---------------- | -------------------------------------------------------------------- |
 | `用藥提醒`       | 啟動互動式提醒設定流程                                               |
 | `修改用藥提醒`   | 顯示已有提醒並可修改開始/結束日與時間                              |
 | `查詢藥品`       | 輸入藥品名稱或點選查詢功能，回覆藥名、適應症、副作用                |
@@ -86,30 +89,33 @@ python app.py
 ## 資料表說明（SQLite）
 
 ### `reminders`
-| 欄位         | 說明                       |
-|--------------|----------------------------|
-| `id`         | 主鍵，自動遞增             |
-| `user_id`    | LINE 使用者 ID             |
-| `medicine`   | 藥品名稱                   |
-| `start_date` | 開始日期 (YYYY-MM-DD)     |
-| `end_date`   | 結束日期 (YYYY-MM-DD)     |
+
+| 欄位         | 說明                      |
+| ------------ | ------------------------- |
+| `id`         | 主鍵，自動遞增            |
+| `user_id`    | LINE 使用者 ID            |
+| `medicine`   | 藥品名稱                  |
+| `start_date` | 開始日期 (YYYY-MM-DD)    |
+| `end_date`   | 結束日期 (YYYY-MM-DD)    |
 | `times`      | JSON 格式時間陣列 (HH:MM) |
-| `sent`       | 是否已發送（備用欄位）     |
+| `sent`       | 是否已發送（備用欄位）    |
 
 ### `reminders_log`
-| 欄位           | 說明                  |
-|----------------|-----------------------|
-| `id`           | 主鍵，自動遞增        |
-| `reminder_id`  | 對應提醒的 ID         |
-| `date`         | 提醒日期              |
-| `time`         | 提醒時間              |
+
+| 欄位          | 說明             |
+| ------------- | ---------------- |
+| `id`          | 主鍵，自動遞增   |
+| `reminder_id` | 對應提醒的 ID    |
+| `date`        | 提醒日期         |
+| `time`        | 提醒時間         |
 
 ### `drugs`
-| 欄位       | 說明       |
-|------------|------------|
-| 中文品名   | 藥品中文名 |
-| 英文品名   | 藥品英文名 |
-| 適應症     | 藥品用途   |
+
+| 欄位     | 說明       |
+| ---------- | ---------- |
+| 中文品名 | 藥品中文名 |
+| 英文品名 | 藥品英文名 |
+| 適應症   | 藥品用途   |
 
 ---
 
