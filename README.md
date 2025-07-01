@@ -1,3 +1,17 @@
+---
+title: DrugUse LineBot 藥品小幫手
+emoji: 💊
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+secrets:
+  - YOUR_CHANNEL_SECRET
+  - YOUR_CHANNEL_ACCESS_TOKEN
+  - GOOGLE_API_KEY
+  - GOOGLE_MAP_API_KEY
+---
+
 # DRUGUSE LINEBOT 藥品小幫手
 
 這是一個整合 **LINE Messaging API**、**Google Gemini AI**、**Google Maps API** 與 **SQLite** 的聊天機器人，用於提供：
