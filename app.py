@@ -56,8 +56,9 @@ if not CHANNEL_SECRET or not CHANNEL_ACCESS_TOKEN or not GOOGLE_API_KEY:
     raise RuntimeError(error_message)
 
 # Construct and log the full webhook URL for LINE
-if 'HF_SPACE_URL' in os.environ:
-    full_webhook_url = f"{base_url.rstrip('/')}/callback"
+space_host = os.environ.get("SPACE_HOST")
+if space_host:
+    full_webhook_url = f"https://{space_host}/callback"
     logging.info("="*60)
     logging.info("  Application started successfully on Hugging Face!")
     logging.info(f"  Please set this Webhook URL in your LINE Developers Console:")
