@@ -12,7 +12,7 @@ secrets:
   - GOOGLE_MAP_API_KEY
 ---
 
-# DRUGUSE LINEBOT 藥品小幫手
+## DRUGUSE LINEBOT 藥品小幫手
 
 這是一個整合 **LINE Messaging API**、**Google Gemini AI**、**Google Maps API** 與 **SQLite** 的聊天機器人，用於提供：
 
@@ -38,7 +38,7 @@ secrets:
 
 ## 安裝方式
 
-1.  建立虛擬環境並安裝依賴
+1. 建立虛擬環境並安裝依賴
 
     ```bash
     python3 -m venv venv
@@ -46,7 +46,7 @@ secrets:
     pip install -r requirements.txt
     ```
 
-2.  設定環境變數：
+2. 設定環境變數：
 
     | 變數名稱                  | 說明                                 |
     | ------------------------- | ------------------------------------ |
@@ -55,7 +55,7 @@ secrets:
     | `GOOGLE_API_KEY`          | Google Gemini API 金鑰               |
     | `GOOGLE_MAP_API_KEY`      | Google Maps API 金鑰（查詢藥局）     |
 
-3.  啟動伺服器
+3. 啟動伺服器
 
     ```bash
     python app.py
@@ -130,7 +130,6 @@ secrets:
 
 - 藥品中文與英文名稱
 - 適應症說明（適應症）
-
 
 ## 測試 API 路由
 
