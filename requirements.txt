@@ -11,7 +11,7 @@ google-auth-oauthlib
 gunicorn
 markdown
 beautifulsoup4
-google-generativeai
+google-generativeai>=0.7.0
 requests
 apscheduler
 pytz
